@@ -1,0 +1,33 @@
+^Django follows the MVT design pattern (Model View Template).
+
+Model - The data you want to present, usually data from a database.
+In Django, data is created in objects, called Models, and is actually tables in a database.
+SQLite Database
+When we created the Django project, we got an empty SQLite database.
+By default, all Models created in the Django project will be created as tables in this database.
+    1)To create model, first create a model class in aapp->models.py
+        class Member(models.Model):
+            firstname = models.CharField(max_length=255)
+            lastname = models.CharField(max_length=255)
+    2) Then run -> py manage.py makemigrations app_folders_name
+    3) Then py manage.py migrate -> now empty database created. To manually add use Django Shell
+    
+    
+
+
+
+Template - A text file (like an HTML file) containing the layout of the web page, with logic on how to display the data.
+
+
+View - A request handler that returns the relevant template and content - based on the request from the user./
+    Django views are Python functions that take http requests and return http response, like HTML documents.
+
+^When you have installed Django and created your first Django web application, and the browser requests the URL, this is basically what happens:
+
+Django receives the URL, checks the urls.py file, and calls the view that matches the URL.
+The view, located in views.py, checks for relevant models.
+The models are imported from the models.py file.
+The view then sends the data to a specified template in the template folder.
+The template contains HTML and Django tags, and with the data it returns finished HTML content back to the browser./
+
+^An app is a web application that has a specific meaning in your project, like a home page, a contact form, or a members database.

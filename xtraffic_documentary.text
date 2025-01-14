@@ -1,0 +1,27 @@
+1. Started project - django-admin startproject xtraffic
+
+2. Creating very basic home page/root page.
+    1. Everything on a webpage is a app. So Homepage. So i created an app called home
+    by running this command: python manage.py startapp home
+
+    2. In app's view.py file i created my view(which is python script) for home called hello.
+        A view always gets request as a argument. My view returns HttpResponse (from django.http)
+    
+    3. Then i created urls.py. Imported path and views. 
+        urlpatterns = [path('', views.hello , name='hello')] '' -> root url, view.hello -> function , name -> url name(for easy access)
+
+    4.  All urls must be included in main urls.py file. First import include. Then include app url to main url.
+        urlpatterns = [
+            path('admin/', admin.site.urls),
+            path('', include('home.urls')) ]
+
+3. Changing view to return HTML (ADDING HTML)
+    1. First create 'templates' folder inside application folder.
+    2. Create HTML file inside templates folder. My HTML called home.html
+    3. To load HTML to view i used django.templates -> loader
+            def hello(request):
+                templates = loader.get_template('home.html')
+                return HttpResponse(templates.render())
+    4. Add app to settings-> INSTALLED_APPS (Your app needs to be added on installed_app if it return more than plain text)
+    
+    

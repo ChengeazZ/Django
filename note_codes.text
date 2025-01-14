@@ -1,0 +1,18 @@
+Create project - django-admin startproject project_name
+
+run server - python manage.py runserver (ip:port)*
+
+
+to create migrations -> python manage.py makemigrations 
+
+to apply all migrations -> python manage.py migrate  ( migrate --> python scripts that will create DataBases when ran)
+
+to create admin -> python manage.py createsuperuser 
+
+django shell -> python manage.py shell  
+
+TO REGISTER Models -> admin.py->  admin.site.register(Posts)
+
+to create new app -> python manage.py startapp app_name
+
+
