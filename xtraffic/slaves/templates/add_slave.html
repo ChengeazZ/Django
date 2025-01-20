@@ -1,0 +1,6 @@
+<h1>Add Slave</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}  <!-- Automatically renders the form fields -->
+    <button type="submit">Add</button>
+</form>

@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <head>
-        {% load static %}
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>DRUGS</title>
-        <link rel="stylesheet" href="{% static 'home/styles.css' %}">
-    </head>
-</head>
-<body>
-    <div class="navbar">
-        <a href="{% url 'home' %}">XTraffic</a>
-    </div>
-</body>
-</html>
+{%extends 'layout.html'%}
+{%load static%}
+{% block title %}
+    DRUGS
+{% endblock %}
+
+
+

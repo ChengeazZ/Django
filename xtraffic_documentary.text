@@ -22,6 +22,7 @@
             def hello(request):
                 templates = loader.get_template('home.html')
                 return HttpResponse(templates.render())
+    4. setting.py -> templates -> dirs -> 'templates'
     4. Add app to settings-> INSTALLED_APPS (Your app needs to be added on installed_app if it return more than plain text)
     
     

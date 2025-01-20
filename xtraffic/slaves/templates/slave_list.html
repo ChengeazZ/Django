@@ -1,0 +1,36 @@
+{%extends "layout.html"%}
+{%load static%}
+{% block title %}
+    XTraffic
+{% endblock %}
+{% block content %}
+<h1>Slave List</h1>
+<a href="{% url 'add_slave' %}">Add New Slave</a>
+<ul>
+    {% for slave in page_obj %}
+    <li>
+        <h2>{{ slave.name }}</h2>
+        <p>Age: {{ slave.age }}</p>
+        <p>Durability: {{ slave.durability }}</p>
+        <p>Race: {{ slave.race }}</p>
+        <p>Price: ${{ slave.price }}</p>
+        <img src="{{ slave.photo }}" alt="{{ slave.name }}" style="max-width: 150px; height: auto;">
+    </li>
+    {% endfor %}
+</ul>
+
+<div>
+    <span>
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+    </span>
+    <div>
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+        {% endif %}
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Next</a>
+        {% endif %}
+    </div>
+</div>
+{%endblock%}
